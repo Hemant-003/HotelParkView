@@ -3,7 +3,7 @@ package com.hemant;
 public class Room {
     private int roomNumber;
     private RoomType type;
-    boolean occupied = false;
+    private boolean occupied = false;
 
     Room(int roomNumber, RoomType type) {
         this.roomNumber = roomNumber;

@@ -11,7 +11,11 @@ public class Main {
             Booking booking1 = hotel.checkIn("Hemant", RoomType.SINGLE, PaymentType.CASH);
             Booking booking2 = hotel.checkIn("Raj", RoomType.SINGLE, PaymentType.CASH);
             Booking booking3 = hotel.checkIn("Aakash", RoomType.DOUBLE, PaymentType.UPI);
+            System.out.println(hotel.getOccupiedRooms());
+
             Booking booking4 = hotel.checkIn("Ravi", RoomType.DOUBLE, PaymentType.CARD);
+
+            System.out.println(hotel.getOccupiedRooms());
 
             System.out.println(booking1);
             System.out.println(booking2);

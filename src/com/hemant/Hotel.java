@@ -21,17 +21,25 @@ public class Hotel {
         // Free room
     }
 
-    public void getOccupiedRooms(){
+    public int getOccupiedRooms() {
+        int count = 0;
 
+        for (Room room : rooms) {
+            if (!room.isAvailable()){
+                count++;
+            }
+        }
+
+        return count;
     }
 
     public void listRooms(){
 
     }
 
-    public boolean isAvailable(int roomNumber){
-        return false;
-    }
+//    public boolean isAvailable(int roomNumber){
+//        return false;
+//    }
 
     @Override
     public String toString() {

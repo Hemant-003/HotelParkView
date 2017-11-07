@@ -9,8 +9,8 @@ public class Hotel {
 
     public Hotel(int numberOfRooms) {
         RoomType type;
-        for (int i = 0; i < 20; i++) {
-            if (i < 10)
+        for (int i = 0; i < numberOfRooms; i++) {
+            if (i % 2 == 0)
                 type = RoomType.SINGLE;
             else type = RoomType.DOUBLE;
             rooms.add(new Room(i + 1, type));
@@ -40,5 +40,19 @@ public class Hotel {
             toStringResult.append(room.toString()).append("\n");
         }
         return toStringResult.toString();
+    }
+
+    Booking checkIn(String name, RoomType type, PaymentType paymentType) throws RoomUnAvailableException {
+        return new Booking(new Customer(name), getNextAvailableRoom(type), paymentType);
+    }
+
+    private Room getNextAvailableRoom(RoomType type) throws RoomUnAvailableException {
+        for (Room room : rooms) {
+            if (room.isAvailable() && room.isType(type)){
+                room.book();
+                return room;
+            }
+        }
+        throw new RoomUnAvailableException();
     }
 }

@@ -4,8 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Hotel {
-    String name;
-    List<Room> rooms = new ArrayList<Room>();
+    private String name = "Park View Hotel";
+    private List<Room> rooms = new ArrayList<Room>();
+
+    public Hotel(int numberOfRooms) {
+        RoomType type;
+        for (int i = 0; i < 20; i++) {
+            if (i < 10)
+                type = RoomType.SINGLE;
+            else type = RoomType.DOUBLE;
+            rooms.add(new Room(i + 1, type));
+        }
+    }
 
     public void checkout(Customer guest){
         // Free room
@@ -21,5 +31,14 @@ public class Hotel {
 
     public boolean isAvailable(int roomNumber){
         return false;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder toStringResult = new StringBuilder("Welcome to " + name + "\n");
+        for (Room room : rooms) {
+            toStringResult.append(room.toString()).append("\n");
+        }
+        return toStringResult.toString();
     }
 }

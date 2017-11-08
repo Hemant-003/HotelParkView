@@ -1,4 +1,4 @@
-package com.hemant;
+package com.company;
 
 public class Booking {
     Customer customer;

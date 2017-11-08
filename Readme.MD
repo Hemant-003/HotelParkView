@@ -13,6 +13,6 @@ Reports :
 * no. of rooms( in total) that are currently occupied
 * num of rooms of each type that are available
 *// a listing of names of all customers( in ascending order) that stayed in a given room
-* Given the room num, give the state of the room occupany( vacant or occupied)
+* Given the room num, give the state of the room occupancy( vacant or occupied)
 
 A user is prompted for the required data.

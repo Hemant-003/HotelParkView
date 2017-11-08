@@ -1,10 +1,15 @@
-package com.hemant;
+package com.company;
 
 class Customer {
     private String name;
 
     Customer(String name){
         this.name = name;
+    }
+
+    public void listOfCustomer(){
+        Customer customer;
+
     }
 
     @Override

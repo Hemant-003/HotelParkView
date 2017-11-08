@@ -1,4 +1,4 @@
-package com.hemant;
+package com.company;
 
 public class Room {
     private int roomNumber;
@@ -9,6 +9,8 @@ public class Room {
         this.roomNumber = roomNumber;
         this.type = type;
     }
+
+
 
     @Override
     public String toString() {
@@ -24,6 +26,7 @@ public class Room {
     public boolean isAvailable() {
         return !occupied;
     }
+
 
     public boolean isType(RoomType type) {
         return this.type.equals(type);

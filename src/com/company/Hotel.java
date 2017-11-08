@@ -1,4 +1,4 @@
-package com.hemant;
+package com.company;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,6 +6,7 @@ import java.util.List;
 public class Hotel {
     private String name = "Park View Hotel";
     private List<Room> rooms = new ArrayList<Room>();
+
 
     public Hotel(int numberOfRooms) {
         RoomType type;
@@ -16,10 +17,23 @@ public class Hotel {
             rooms.add(new Room(i + 1, type));
         }
     }
+    public void stateOfRoom(Room room1){
+        for (Room room : rooms){
+            if (room1.isAvailable()){
+                System.out.println("Room is empty");
+                return;
+            }
+            else {
+                System.out.println("Room is filled");
+            }
+        }
+    }
 
     public void checkout(Customer guest){
+        Customer customer;
+
         // Free room
-    }
+        }
 
     public int getOccupiedRooms() {
         int count = 0;
@@ -31,6 +45,18 @@ public class Hotel {
         }
 
         return count;
+    }
+    public void getAvailableRooms(){
+        for (Room room : rooms){
+            if (room.isAvailable()){
+                if (room.isType(RoomType.SINGLE)){
+                    System.out.println("Single type available "+room.toString());
+                }
+                else if (room.isType(RoomType.DOUBLE)){
+                    System.out.println("Double type available "+room.toString());
+                }
+            }
+        }
     }
 
     public void listRooms(){

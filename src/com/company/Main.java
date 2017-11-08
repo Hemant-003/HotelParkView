@@ -1,22 +1,28 @@
-package com.hemant;
+package com.company;
 
 public class Main {
 
     public static void main(String[] args) {
-        Hotel hotel = new Hotel(4);
+        Hotel hotel = new Hotel(8);
+
 
 //        System.out.println(hotel);
 
+
+
         try {
-            Booking booking1 = hotel.checkIn("Hemant", RoomType.SINGLE, PaymentType.CASH);
+            Booking booking1 = hotel.checkIn("company", RoomType.SINGLE, PaymentType.CASH);
             Booking booking2 = hotel.checkIn("Raj", RoomType.SINGLE, PaymentType.CASH);
             Booking booking3 = hotel.checkIn("Aakash", RoomType.DOUBLE, PaymentType.UPI);
             System.out.println(hotel.getOccupiedRooms());
 
             Booking booking4 = hotel.checkIn("Ravi", RoomType.DOUBLE, PaymentType.CARD);
 
-            System.out.println(hotel.getOccupiedRooms());
+            Room room = new Room(5,RoomType.SINGLE);
+            hotel.stateOfRoom(room);
 
+            System.out.println(hotel.getOccupiedRooms());
+            hotel.getAvailableRooms();
             System.out.println(booking1);
             System.out.println(booking2);
             System.out.println(booking3);

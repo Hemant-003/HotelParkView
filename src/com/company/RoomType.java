@@ -1,4 +1,4 @@
-package com.hemant;
+package com.company;
 
 public enum RoomType {
     SINGLE(400.0), DOUBLE(500.0);
